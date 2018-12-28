@@ -11,30 +11,40 @@ public class TransposeStringTest {
     TransposeString obj;
     @Before
     public void setUp() throws Exception {
-        TransposeString obj = new TransposeString();
+         obj = new TransposeString();
 
     }
 
     @After
     public void tearDown() throws Exception {
-        TransposeString obj= null;
+         obj= null;
     }
 
     @Test
     public void reserveWords() {
-        assertEquals("a kciuq nworb xof spmuj revo eht yzal god",obj.reserveWords("a quick brown fox jumps over the lazy dog"));
+        String  input = "a quick brown fox jumps over the lazy dog";
+        String result = "a kciuq nworb xof spmuj revo eht yzal god";
+        assertEquals(result,obj.reserveWords(input));
     }
+
     @Test
     public void reserveWordsTest1() {
-        assertEquals("etuorkcats",obj.reserveWords("stackroute"));
+        String input = "stackroute";
+        String result = "etuorkcats";
+        assertEquals(result,obj.reserveWords(result));
     }
+
     @Test
     public void reserveWordsTest2() {
-        assertEquals("gnieob",obj.reserveWords("boeing"));
+        String input = "boeing";
+        String result = "gnieob";
+        assertEquals("",obj.reserveWords("boeing"));
     }
     @Test
     public void reserveWordsTest3() {
-        assertNotEquals("gnieob",obj.reserveWords("boeing"));
+        String input = "boeing";
+        String result = "gnieob";
+        assertNotEquals(result,obj.reserveWords(input));
     }
 
 

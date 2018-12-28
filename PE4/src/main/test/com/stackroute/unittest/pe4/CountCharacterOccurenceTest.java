@@ -9,29 +9,32 @@ import static org.junit.Assert.*;
 public class CountCharacterOccurenceTest {
 
     CountCharacterOccurence obj;
-
     @Before
     public void setUp() throws Exception {
-        CountCharacterOccurence obj = new CountCharacterOccurence();
-
+        obj=new CountCharacterOccurence();
     }
 
     @After
     public void tearDown() throws Exception {
-        CountCharacterOccurence obj = null;
+    }
+    @Test
+    public void charOcuurTest(){
+        String input="stackrouuuuuuute";
+        assertEquals(7,obj.countOccurrence(input,'u',0));
     }
 
     @Test
-    public void characterCount() {
-        assertEquals(2,obj.characterCount("Swetha Devi D","D"));
+    public void charOcuurTest1(){
+        String input="Boeeeeing";
+        assertEquals(4,obj.countOccurrence(input,'e',0));
     }
     @Test
-    public void characterCount1() {
-        assertEquals(2,obj.characterCount("Stackroute","t"));
+    public void charOcuurTest2(){
+        String input="Swethaaaaaaa";
+        assertEquals(6,obj.countOccurrence(input,'a',0));
     }
-    @Test
-    public void  characterCount2(){
-        assertNotEquals(2,obj.characterCount("Boeing","c"));
 
-    }
+
+
+
 }

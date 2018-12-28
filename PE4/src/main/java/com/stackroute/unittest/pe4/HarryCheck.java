@@ -13,11 +13,6 @@ import java.util.regex.Pattern;
  */
 
 public class HarryCheck {
-    public static void main(String args[]){
-        String str = "This is Harry";
-        System.out.println(toCheckPresence(str));
-    }
-
 
     public static boolean toCheckPresence(String str){
         String regex = "\\bHarry\\b"; // creating regex of Harry

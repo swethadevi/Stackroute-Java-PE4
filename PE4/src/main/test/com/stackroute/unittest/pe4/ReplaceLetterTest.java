@@ -11,21 +11,26 @@ public class ReplaceLetterTest {
     ReplaceLetter obj;
     @Before
     public void setUp() throws Exception {
-        ReplaceLetter obj = new ReplaceLetter();
+        obj = new ReplaceLetter();
     }
 
     @After
     public void tearDown() throws Exception {
-        ReplaceLetter obj = null;
+         obj = null;
     }
 
     @Test
     public void replaceLettertest() {
-        assertEquals("faily fry",obj.replaceLetter("daily dry") );
+        String input = "daily dry";
+        String result = "faily fry";
+        assertEquals(result,obj.replaceLetter(input) );
     }
 
     @Test
     public void replaceLettertest1() {
-        assertEquals("fevice fish",obj.replaceLetter("device dish") );
+        String input = "device dish";
+        String result = "fevice fish";
+        assertEquals(result,obj.replaceLetter(input) );
+
     }
 }

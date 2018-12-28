@@ -1,28 +1,38 @@
 package com.stackroute.unittest.pe4;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class CountMultipleOccurenceTest {
+public class CountMultipleOccurenceTest  {
 
-
-    CountCharacterOccurence obj;
-    @Before
-    public void setUp() throws Exception {
-        CountCharacterOccurence obj = new CountCharacterOccurence();
+    private CountMultipleOccurence matcher = new CountMultipleOccurence();
+    @Test
+    public void checkSuccess() {
+        String input = "She sells seashells by the seashore";
+        String checkPattern = "se";
+        String output = "Found at:4-6" +
+                "Found at:10-12" +
+                "Found at:27-29";
+        assertEquals(output,matcher.multipleOccurence(input,checkPattern));
+    }
+    @Test
+    public void checkFailure() {
+        String input = "She sells seashells by the seashore";
+        String checkPattern = "se";
+        String output = "Found at:4-6" +
+                "Found at:10-12" +
+                "Found:27-29";
+        assertNotSame(output,matcher.multipleOccurence(input,checkPattern));
+    }
+    @Test
+    public void checkNotNull() {
+        String input = "She sells seashells by the seashore";
+        String checkPattern = "se";
+        String output = "Found at:4-6" +
+                "Found at:10-12" +
+                "Found at:27-29";
+        assertNotNull(matcher.multipleOccurence(input,checkPattern));
     }
 
-    @After
-    public void tearDown() throws Exception {
-        CountCharacterOccurence obj = null;
-    }
-
-
-//    @Test
-//    public void findMultipleOccurrence() {
-//        assertEquals("4-6-10-12-27-29-",obj.findMultipleOccurrence("She sells seashells by the seashore"));
-//    }
 }

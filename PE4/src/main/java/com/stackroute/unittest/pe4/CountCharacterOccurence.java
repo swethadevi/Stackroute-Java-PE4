@@ -9,23 +9,14 @@ import java.util.*;
 
 
 public class CountCharacterOccurence {
-    public static void main(String[] args) {
-        String str1 = "Swetha Devi D";
-        String resString = "t";
-        characterCount(str1,resString);
-
-    }
-
-    public static int characterCount(String str1,String resString){
-        int count = 0;
-        for(int i=0; i<str1.length(); i++){
-            if(str1.charAt(i) == resString.charAt(0)){
-                count++;
-               // System.out.println(count);
-            }
+    public long countOccurrence(String input, final char check,int index) {
+        if (index >= input.length()) {
+            return 0;
         }
-        System.out.println("The occurence of e is "+count);
-        return count;
 
+        int count = input.charAt(index) == check ? 1 : 0;
+        return count + countOccurrence(input, check, index + 1);
     }
+
+
 }

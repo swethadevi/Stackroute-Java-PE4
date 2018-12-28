@@ -11,27 +11,33 @@ public class HarryCheckTest {
     HarryCheck obj;
     @Before
     public void setUp() throws Exception {
-        HarryCheck obj = new HarryCheck();
+         obj = new HarryCheck();
     }
 
     @After
     public void tearDown() throws Exception {
-        HarryCheck obj = null;
+          obj = null;
     }
 
     @Test
     public void toCheckPresence() {
-        assertEquals(true, obj.toCheckPresence("this is Harry"));
+    String str = "This is Harry";
+    assertEquals("True",obj.toCheckPresence(str));
+
+
     }
 
     @Test
-    public void toCheckPresenceTest1() {
-        assertEquals(false, obj.toCheckPresence("this is Herry"));
+    public void toCheckPresenceTest1()
+    {
+        String str = "this is Herry";
+        assertEquals("false", obj.toCheckPresence("this is Herry"));
     }
 
     @Test
     public void toCheckPresenceTest2() {
-        assertNotEquals(true, obj.toCheckPresence("this is Harry"));
+        String str = "This is Harry";
+        assertNotEquals("true", obj.toCheckPresence("this is Harry"));
     }
 
 }

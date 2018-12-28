@@ -9,11 +9,6 @@ import java.util.*;
 
 public class TransposeString {
 
-    public static void main(String args[]){
-        //Scanner sc = new Scanner(System.in);
-        String str = "a quick brown fox jumps over the lazy dog";
-        System.out.println(reserveWords(str));
-    }
 
     public static String reserveWords(String str){
         StringBuilder bf = new StringBuilder();
@@ -21,6 +16,7 @@ public class TransposeString {
         bf = bf.reverse(); //to reverse the string buffer
 
         str = bf.toString(); //to convert the buffer object to String
+        System.out.println(str);
         String arrStr[] = str.split(" "); //to split the string with a  spcae " "
         int i;
         String resStr = "";
